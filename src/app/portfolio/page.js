@@ -3,8 +3,8 @@ import { createClient } from "@/utils/supabase/client";
 import Image from "next/image";
 import Link from "next/link";
 
-export default async function Portfolio({ searchParams }) {
-  const params = await searchParams;
+export default async function Portfolio({ params }) {
+  const params = await params;
   const PAGE_SIZE = 6;
   const PAGE_GROUP_SIZE = 5;
 
