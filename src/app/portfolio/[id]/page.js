@@ -2,6 +2,8 @@ import { createClient } from "@/utils/supabase/client";
 import Image from "next/image";
 
 export async function generateStaticParams() {
+  const supabase = createClient();
+
   const { data, error } = await supabase.from("portfolio").select("id");
   if (error) {
     console.error(error);
