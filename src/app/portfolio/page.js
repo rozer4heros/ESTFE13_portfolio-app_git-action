@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default async function Portfolio({ params }) {
-  const params = await params;
+  const pages = await params;
   const PAGE_SIZE = 6;
   const PAGE_GROUP_SIZE = 5;
 
@@ -21,7 +21,7 @@ export default async function Portfolio({ params }) {
 
   // 페이지네이션 링크 생성
   const pageCount = Math.ceil(portfolioCount / PAGE_SIZE);
-  const pageCurrent = Math.min(!!Number(params.page) ? Number(params.page) : 1, pageCount);
+  const pageCurrent = Math.min(!!Number(pages.page) ? Number(pages.page) : 1, pageCount);
 
   // 링크 클릭 시
   const from = PAGE_SIZE * (pageCurrent - 1);
